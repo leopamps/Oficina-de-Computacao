@@ -15,3 +15,10 @@ typedef struct pgm
 	unsigned char **matriz;
 
 } pgm;
+
+typedef struct parametros
+{
+	FILE* input;
+	FILE* output;
+	double angulo;
+}

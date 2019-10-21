@@ -1,25 +1,24 @@
 #include"tratamentoIO.h"
 
-void entrada(int argc,char * const argv[])
+parametros *entrada(int argc,char * const argv[])
 {
 
-	FILE * in;
     int opt;
-
-    pgm *img;
+    parametros *param;
 
 	while ((opt = getopt(argc, argv, "i:o:")) != -1) {    //leitura via terminal da img q será aberta e de seu destino
         switch (opt) {
             case 'i':
-    			in = fopen(optarg,"r");
-         		//pula_coment(in);
-         		 le_imagem(in, img);
-         		
-         		escreve_img(stdout, img);
-                break;
+    			param->input = fopen(optarg,"r");
+         		break;
+            
             case 'o':
-               // out = fopen(optarg,"w");
+                param->output = fopen(optarg,"w");
                 break;
+            
+            case 'a' :
+                param->angulo = atof(optarg);
         }
     }
+    return param;
 }

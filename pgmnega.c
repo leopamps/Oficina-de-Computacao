@@ -1,12 +1,12 @@
-#include<stdio.h>
-#include"tratamentonega.h"
+//LeonardoDavi Pamplona GRR20170027
+#include "estrutura.h"
 
-
-void nega (pgm* img)
+int main(int argc,char * const argv[])
 {
-	for(int i=0; i< img->linha; i++ )
-		for (int j = 0; j < img->coluna; ++j)
-		{
-			img->matriz[i,j] = img->tom - img->matriz[i,j];
-		}
+	pgm *img;
+	parametros *param = entrada(argc, argv);
+	le_imagem(param->input, img);
+	escreve_img(stdout, img);
+	nega(img);
 }
+
