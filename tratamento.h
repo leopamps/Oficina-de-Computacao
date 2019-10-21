@@ -1,0 +1,5 @@
+
+#ifndef TRATAMENTOIMAGEM_H
+#define TRATAMENTOIMAGEM_H
+
+#include<
